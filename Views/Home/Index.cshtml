@@ -1,0 +1,111 @@
+﻿@model ContactUsViewModel
+@{
+  ViewData["Title"] = "Home Page";
+}
+
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner baner-width">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="~/images/baner1.png" alt="1 slide">
+      <div class="carousel-caption d-none d-md-block">
+   
+    </div>
+    </div>
+    <div class="carousel-item ">
+      <img class="d-block w-100" src="~/images/baner2.png" alt="2 slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="~/images/baner3.png" alt="3 slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="~/images/baner4.png" alt="4 slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="~/images/baner5.png" alt="5 slide">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+<div class="row font-style">
+  <div class="offset-lg-1 col-lg-10 col-12">
+    <h2 class="section" id="about">O NAS</h2>
+    <div class="card card-shadow card-justified ">
+      <div class="card-body">
+        Naszym celem jest rozpowszechnienie zdrowej żywności na
+        lokalnym rynku. Poprowadzimy restaurację otwartą
+        na potrzeby klientów. Chcemy promować zdrowy styl życia.
+        Staramy się o wynajem lokalu, w którym wcześniej mieściła
+        się restauracja. Właściciel udostępnia nam w dzierżawie
+        sprzęt kuchenny. Pragniemy zaszczepić w naszych klientach,
+        że zdrowe odżywianie to nie kara i odmawianie sobie
+        przyjemności. Pokażemy że lekkie i zdrowe posiłki są smaczne!
+        Naszym pierwszym celem jest zostanie liderem na rynku
+        lokalnym, chcemy się cały czas rozwijać. W planach mamy
+        catering dietetyczny, wprowadzenie orzeźwiających koktajli do
+        siłowni oraz otwarcie lokali w innych miastach.
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div id="contact" class="row font-style">
+  <div class="offset-lg-1 col-lg-10 col-12">
+    <h2 class="section">KONTAKT</h2>
+    <div class="row">
+      <div class="col-12 col-lg-5 col-md-6">
+        
+        <div class="card card-shadow card-find-us card-small">
+          <div class="card-body">
+            <div class="card-text">
+              <h3 class="text-center">ZNAJDŹ NAS</h3>
+              <p class="text-center">FIT FRESH</p>
+              <p class="text-center">ul. Wiosenna 6</p>
+              <p class="text-center">83-800 Gostyń</p>
+              <p class="text-center">tel.123-456-789</p>
+              <p class="text-center social-media-icons">
+                <img src="~/images/facebook.png">
+                <img src="~/images/instagram.png">
+                <img src="~/images/twitter.png">
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 offset-lg-2 col-lg-5 col-md-6">
+        
+        <div class="card card-shadow card-small">
+          <div class="card-body">
+            <h3 class="text-center">NAPISZ DO NAS</h3>
+            <form asp-action="SendMail" method="post">
+              <div class="form-group">
+                <label>Email</label>
+                <input asp-for="Email" class="form-control">
+                <label>Treść</label>
+                <textarea asp-for="Content" class="form-control"rows="3"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+  </tr>
+  </table>
+</div>

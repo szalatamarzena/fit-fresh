@@ -1,0 +1,26 @@
+@model MvcBlog.Models.Post
+
+@{
+    ViewData["Title"] = "Post";
+    string base64 = string.Empty;
+    if (Model.Image != null)
+    {
+        base64 = string.Format("data:{0};base64,{1}", Model.ImageMimeType, Convert.ToBase64String(Model.Image));
+    }
+}
+<div class="container">
+        
+    <img class="d-block w-100 image-post" src="@base64" />
+    
+    <h2>
+        @Html.DisplayFor(model => model.Title)
+    </h2>
+
+    <p>
+        Post Date: @Html.DisplayFor(model => model.PostDate)
+    </p>
+
+    <p class="post-content">
+        @Html.DisplayFor(model => model.Content)
+    </p>
+</div>

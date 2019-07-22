@@ -1,0 +1,35 @@
+@model IEnumerable<MvcBlog.Models.Post>
+
+@{
+    ViewData["Title"]="Blog";
+}
+
+
+    <h2>WPISY</h2>
+    <div class="container container-blog">
+        <div class="row">
+            @foreach (var item in Model) {
+                
+                    string base64=string.Empty;
+                    if (item.Image !=null) {
+                        base64=string.Format("data:{0};base64,{1}", item.ImageMimeType, Convert.ToBase64String(item.Image));
+                    }
+                
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card card-shadow card-blog mx-auto"><img class="card-img-top" src="@base64" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">@Html.DisplayFor(modelItem=> item.Title)</h5>
+                            <p class="card-text text-overflow">@Html.DisplayFor(modelItem=> item.Content)</p>
+                           
+                        </div>
+                        
+                            <a asp-action="Post" asp-route-id="@item.ID" class="card-footer bg-success btn btn-success btn-sm btn-block color-font">Zobacz więcej</a>
+                           
+                    </div>
+                </div>
+            }
+
+
+        </div>
+    </div>
